@@ -2331,41 +2331,6 @@ localStorage.setItem('password', '123'); // Bad!
 
 ---
 
-## Q13: Browser Navigation and History
-
-### What is Browser Navigation and History?
-
-The History API allows JavaScript to interact with the browser session history.
-
-### Common Methods
-
-```javascript
-history.back();
-history.forward();
-history.go(-1);
-history.go(1);
-```
-
-### Useful Properties
-
-```javascript
-console.log(history.length);
-```
-
-### location Object
-
-```javascript
-location.href;
-location.reload();
-location.assign('https://example.com');
-```
-
-### Interview Tip
-
-The History API helps navigate between previously visited pages without manually using browser buttons.
-
----
-
 ## OOP Fundamentals
 
 ### Q14: What is Object-Oriented Programming?
@@ -2512,75 +2477,6 @@ const jane = new Person('Jane'); // Reusable!
 ```
 
 **Interview tip:** Classes are templates for creating objects introduced in ES6. They have a constructor method that initializes properties and can have methods. Classes are syntactic sugar over JavaScript's prototypal inheritance."
-
----
-
-
-#q16-constructor-functions
-
-## Q16: Constructor Functions
-
-Constructor functions were used before ES6 classes to create multiple objects.
-
-```javascript
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-const user = new Person('John', 25);
-```
-
-### Key Points
-
-- Function name usually starts with capital letter.
-- Used with `new` keyword.
-- `this` refers to the new object.
-
-### Interview Tip
-
-Constructor functions are older syntax for object creation before ES6 classes.
-
----
-
-#q17-the-new-keyword
-
-## Q17: The 'new' Keyword
-
-The `new` keyword creates an object from a constructor function or class.
-
-### What happens internally?
-
-1. Creates empty object `{}`
-2. Links object to prototype
-3. Sets `this` to new object
-4. Returns object automatically
-
-```javascript
-function User(name) {
-  this.name = name;
-}
-
-const u1 = new User('Alex');
-```
-
----
-
-#q18-static-methods-and-properties
-
-## Q18: Static Methods and Properties
-
-Static methods belong to the class itself, not instances.
-
-```javascript
-class MathUtils {
-  static add(a, b) {
-    return a + b;
-  }
-}
-
-console.log(MathUtils.add(2, 3));
-```
 
 ---
 
@@ -2752,147 +2648,6 @@ console.log(Object.getPrototypeOf(Object.prototype)); // null
 
 ---
 
-
-#q21-__proto__-vs-prototype
-
-## Q21: __proto__ vs prototype
-
-```javascript
-function Person() {}
-
-const obj = new Person();
-
-console.log(obj.__proto__ === Person.prototype);
-```
-
-| prototype | __proto__ |
-|---|---|
-| Exists on functions | Exists on objects |
-| Creates inheritance | References prototype |
-
----
-
-#q22-prototypal-inheritance
-
-## Q22: Prototypal Inheritance
-
-```javascript
-const animal = {
-  eat() {
-    console.log('Eating');
-  }
-};
-
-const dog = Object.create(animal);
-
-dog.eat();
-```
-
----
-
-#q23-classical-vs-prototypal-inheritance
-
-## Q23: Classical vs Prototypal Inheritance
-
-| Classical | Prototypal |
-|---|---|
-| Class-based | Object-based |
-| Uses classes | Uses prototypes |
-
----
-
-#q24-inheritance-with-classes
-
-## Q24: Inheritance with Classes
-
-```javascript
-class Animal {
-  speak() {
-    console.log('Animal speaks');
-  }
-}
-
-class Dog extends Animal {
-  bark() {
-    console.log('Woof');
-  }
-}
-```
-
----
-
-#q25-method-overriding
-
-## Q25: Method Overriding
-
-```javascript
-class Animal {
-  sound() {
-    console.log('Animal sound');
-  }
-}
-
-class Dog extends Animal {
-  sound() {
-    console.log('Woof');
-  }
-}
-```
-
----
-
-#q26-private-fields-and-methods
-
-## Q26: Private Fields and Methods
-
-```javascript
-class Bank {
-  #balance = 0;
-
-  deposit(amount) {
-    this.#balance += amount;
-  }
-}
-```
-
----
-
-#q27-getters-and-setters
-
-## Q27: Getters and Setters
-
-```javascript
-class User {
-  constructor(name) {
-    this._name = name;
-  }
-
-  get name() {
-    return this._name;
-  }
-
-  set name(value) {
-    this._name = value;
-  }
-}
-```
-
----
-
-#q28-instanceof-operator
-
-## Q28: instanceof Operator
-
-```javascript
-class Person {}
-
-const p = new Person();
-
-console.log(p instanceof Person);
-```
-
----
-
 ## OOP Principles
 
 ### Q29: What is Encapsulation?
@@ -2943,16 +2698,6 @@ account.deposit(500);
 ```
 
 **Interview tip:** Encapsulation means bundling data and methods together and hiding internal details. Use private fields (#) to restrict direct access. Expose only necessary methods (public interface) to interact with the object."
-
----
-
-
-
-#q30-abstraction
-
-## Q30: Abstraction
-
-Abstraction hides implementation details and exposes only essential functionality.
 
 ---
 
@@ -3099,29 +2844,6 @@ myModule.privateMethod(); // Error! Not accessible
 
 ---
 
-
-
-#q34-revealing-module-pattern
-
-## Q34: Revealing Module Pattern
-
-```javascript
-const Counter = (function () {
-  let count = 0;
-
-  function increment() {
-    count++;
-  }
-
-  return {
-    increment
-  };
-})();
-```
-
----
-
-
 ### Q35: What is Singleton Pattern?
 
 **How to Answer:**
@@ -3226,29 +2948,6 @@ const myBike = VehicleFactory('bike', 'mountain');
 
 **Interview tip:** Factory Pattern uses a function to create objects based on parameters. Useful when creation logic is complex or when the exact type isn't known until runtime."
 
----
-
-
-
-#q37-observer-pattern
-
-## Q37: Observer Pattern
-
-```javascript
-class Subject {
-  constructor() {
-    this.observers = [];
-  }
-
-  subscribe(fn) {
-    this.observers.push(fn);
-  }
-
-  notify(data) {
-    this.observers.forEach(fn => fn(data));
-  }
-}
-```
 ---
 
 ## Final Tips
